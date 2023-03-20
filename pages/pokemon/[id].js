@@ -6,7 +6,32 @@ import Head from "next/head"
 export default function Pokemon({ pokemon, sprite }) {
     console.log(pokemon, sprite)
 
-    return <h1>That's right!</h1>
+    return(
+        <>
+            <Head>
+                <title>{pokemon.name}</title>
+            </Head>
+            <section>
+                <h1>{pokemon.name} - ID: {pokemon.id}</h1>
+                <img src={sprite} alt={pokemon.name}/>
+                <h2>Types</h2>
+                <ul>
+                    {pokemon.pokemon_v2_pokemontypes.map((type) => {
+                        return <li key={type.pokemon_v2_type.name}>{type.pokemon_v2_type.name}</li>
+                    })}
+                </ul>
+
+                <h2>Stats</h2>
+                <ul>
+                    {pokemon.pokemon_v2_pokemonstats.map((stat) => {
+                        return <li key={stat.pokemon_v2_stat.name}>
+                            {stat.pokemon_v2_stat.name}: {stat.base_stat}
+                                </li>
+                    })}
+                </ul>
+            </section>
+        </>
+    )
 }
 
 export async function getServerSideProps({params}){
@@ -16,7 +41,7 @@ export async function getServerSideProps({params}){
     const { data } = await client.query({
         query: gql`
             query GetPokemon {
-                pokemon_v2_pokemon(where: {id: {_lte: 151}}) {
+                pokemon_v2_pokemon(where: {id: {_eq: ${params.id}}}) {
                 id
                 name
                 pokemon_v2_pokemonstats {
