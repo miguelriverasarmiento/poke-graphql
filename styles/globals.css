@@ -1,0 +1,8 @@
+body {
+    font-size: 17px;
+}
+
+::marker {
+    color: rgb(39 98 5);
+    font-size: 20px;
+}

@@ -1,14 +1,22 @@
+/* Main page*/
+
 .container_index {
   display: flex;
   flex-direction: column;
   background-color: rgba(196, 140, 140, 0.37);
-  box-shadow: 2px 2px 3px 1px rgb(37, 29, 29);
+  box-shadow: 2px 2px 2px 2px rgb(37, 29, 29);
   text-align: center;
   align-items: center;
 }
 
 .title { 
   margin-top: 112px;
+  color: green;
+  font-family: system-ui;
+  letter-spacing: 1px;
+  background-color: #141414;
+  padding: 96px;
+  text-shadow: 1px 1px 1px rgb(230, 78, 78), 2px 2px 1px red;
 }
 
 .list {
@@ -16,10 +24,87 @@
 }
 
 .AllLi {
-  list-style: none;
+  list-style-type: decimal;
+  font: small-caps bold 24px/1 sans-serif;
+  line-height: 40px;
 }
 
 .theLink {
   text-decoration: none;
   color: rgb(27, 20, 12);
+  mix-blend-mode: luminosity;
+}
+
+/* Details pokemon page*/
+
+.container_details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-color: rgba(69, 167, 3, 0.37);
+}
+
+.poke_title {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  font-family: system-ui;
+  font-size: 35px;
+  color: rgb(0 223 49);
+  text-shadow: 1px 1px 1px rgb(26, 61, 9), 2px 2px 1px red;
+}
+
+.idPoke {
+  color: rgb(31, 1, 1);
+  font-family: serif;
+}
+
+.poke_img {
+  width: 60%;
+  height: auto;
+  filter: drop-shadow(0 12px 1px rgba(0, 0, 0, 0.4));
+}
+
+.title_types {
+  font-family: serif;
+  font-size: 23px;
+  color: #200101;
+  text-shadow: 1px 1px 1px rgb(109 215 0);
+}
+
+.types_ul {
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+  color: #200101;
+  text-shadow: 1px 1px 1px rgb(151 138 36);
+}
+
+.li_poke {
+  list-style-type: none;
+  font-family: serif;
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
+.title_stats {
+  font-family: serif;
+  font-size: 23px;
+  color: #200101;
+  text-shadow: 1px 1px 1px rgb(109 215 0);
+}
+
+.stats_ul {
+  display:inline;
+  padding-left:3px;
+  padding-right:3px;
+  color: #200101;
+  text-shadow: 1px 1px 1px rgb(151 138 36);
+}
+
+.li_stats {
+  list-style-type: none;
+  font-family: serif;
+  font-size: 16px;
+  text-transform: capitalize;
 }

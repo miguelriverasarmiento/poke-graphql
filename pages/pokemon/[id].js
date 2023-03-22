@@ -1,36 +1,37 @@
 import { gql } from "@apollo/client"
 import client from "../../apollo-client"
 import Head from "next/head"
-//import styles from '../../styles/Pokemon.module.css'
+import styles from '../../styles/Home.module.css'
 
 export default function Pokemon({ pokemon, sprite }) {
     console.log(pokemon, sprite)
 
     return(
-        <>
+        <div className={styles.container_details}>
             <Head>
                 <title>{pokemon.name}</title>
             </Head>
             <section>
-                <h1>{pokemon.name} - ID: {pokemon.id}</h1>
-                <img src={sprite} alt={pokemon.name}/>
-                <h2>Types</h2>
-                <ul>
+                <h1 className={styles.poke_title}>{pokemon.name}</h1>
+                <h4 className={styles.idPoke}>Id: {pokemon.id}</h4>
+                <img src={sprite} alt={pokemon.name} className={styles.poke_img} />
+                <h2 className={styles.title_types}>Types</h2>
+                <ul className={styles.types_ul}>
                     {pokemon.pokemon_v2_pokemontypes.map((type) => {
-                        return <li key={type.pokemon_v2_type.name}>{type.pokemon_v2_type.name}</li>
+                        return <li className={styles.li_poke} key={type.pokemon_v2_type.name}>{type.pokemon_v2_type.name}</li>
                     })}
                 </ul>
 
-                <h2>Stats</h2>
-                <ul>
+                <h2 className={styles.title_stats}>Stats</h2>
+                <ul className={styles.stats_ul}>
                     {pokemon.pokemon_v2_pokemonstats.map((stat) => {
-                        return <li key={stat.pokemon_v2_stat.name}>
+                        return <li className={styles.li_stats} key={stat.pokemon_v2_stat.name}>
                             {stat.pokemon_v2_stat.name}: {stat.base_stat}
                                 </li>
                     })}
                 </ul>
             </section>
-        </>
+        </div>
     )
 }
 

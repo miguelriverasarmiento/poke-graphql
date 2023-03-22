@@ -20,7 +20,7 @@ export default function Home() {
 
   return (
     <main className={styles.container_index}>
-      <h1 className={styles.title}>Pokemon- First generation</h1>
+      <h1 className={styles.title}>Pokemon First Generation</h1>
       <ul className={styles.list}>
         {
           pokemon.map((pokemon, index) => {
