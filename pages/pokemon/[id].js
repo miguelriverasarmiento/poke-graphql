@@ -4,8 +4,6 @@ import Head from "next/head"
 import styles from '../../styles/Home.module.css'
 
 export default function Pokemon({ pokemon, sprite }) {
-    console.log(pokemon, sprite)
-
     return(
         <div className={styles.container_details}>
             <Head>

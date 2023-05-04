@@ -18,9 +18,18 @@
   padding: 96px;
   text-shadow: 1px 1px 1px rgb(230, 78, 78), 2px 2px 1px red;
 }
+.inputPoke {
+  margin-top: 78px;
+}
 
 .list {
-  margin-top: 117px;
+  margin-top: 58px;
+  padding-left: 23px;
+}
+
+.buttonSection {
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .AllLi {
