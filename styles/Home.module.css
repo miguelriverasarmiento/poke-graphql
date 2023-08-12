@@ -24,7 +24,7 @@
 
 .list {
   margin-top: 58px;
-  padding-left: 23px;
+  padding-left: 1px;
 }
 
 .buttonSection {
@@ -33,7 +33,7 @@
 }
 
 .AllLi {
-  list-style-type: decimal;
+  list-style: none;
   font: small-caps bold 24px/1 sans-serif;
   line-height: 40px;
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 import styles from '../styles/Home.module.css'
 import {getCurrentSearch} from "./api/hello"
 
-export default function Home() {
+export default function Home({ sprite }) {
   const searchInput = useRef(null);
   const [pokemon, setPokemon] = useState([]);
   const [pokemonName, setPokemonName] = useState([]);
@@ -13,13 +13,12 @@ export default function Home() {
   const [page, setPage] = useState(1);
  
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/?limit=20&offset=${page}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon/?limit=15&offset=${page}`)
       .then((res) => res.json())
       .then((data) => {
         setPokemon(data.results);
         setPokemonName(data.results.map((pokemon) => pokemon.name));
         setPokemonId(data.results.map((pokemon) => pokemon.url.split('/')[6]));
-        console.log(data)
       })
   }, [page])
   
